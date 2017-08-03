@@ -41,3 +41,28 @@ replicate' :: Int -> a -> [a]
 replicate' n x
   | n <= 0 = []
   | n > 0 = x : replicate' (n - 1) x
+
+take' :: Int -> [a] -> [a]
+take' n _
+  | n <= 0 = []
+take' _ [] = []
+take' n (x:xs) = x : take' (n - 1) xs 
+
+
+reverse' :: [a] -> [a]
+reverse' [] = []
+reverse' x =
+  let lastElem = last x
+      initArr = init x
+  in lastElem : reverse' initArr
+
+reverse'' :: [a] -> [a]
+reverse'' [] = []
+reverse'' (x:xs) = reverse'' xs ++ [x]
+
+zip' :: [a] -> [b] -> [(a,b)]
+zip' _ [] = []
+zip' [] _ = []
+zip' (a:ax) (b:bx) = (a,b):zip' ax bx
+
+
