@@ -1,5 +1,16 @@
 # Haskell
 
+## Function Application
+
+
+function application is assumed to have higher priority than all other operators
+
+```
+f a + b
+```
+
+meanns `(f a) + b`
+
 ## Syntax in Functions
 
 ### Pattern Matching
@@ -147,3 +158,27 @@ describeList ls = "The list is " ++ what ls
         what [x] = "a singleton list."
         what xs = "a longer list."
 ```
+
+## Hello Recursion!
+
+Recursion is a way of defining functions in which a function is applied inside its own definition. The function calls itself.
+
+The strategy is to break down the problem into smaller problems of the same kind, and then solve those problems... breaking them down further if necessary. Eventually we reach the `base case` of the problem, which can't be broken down anymore, and whose solution needs to be explicity (non-recursively) defined by the programmer.
+
+Recursion is important in haskell, because unlike with imperative languages, you do computations in Haskell by declaring `what` something is, rather than specifying `how` you compute it.
+
+That's why haskell isnt about issueing your computer a sequence of steps to execute, but rather correctly defining what the desired result is, often in a recursive manner.
+
+### Maximum Awesome
+
+
+```
+maximum' :: (Ord a) => [a] -> a
+maximum' [] = error "maximum of empty list!"
+maximum' [x] = x
+maximum' (x:xs) = max x (maximum' xs)
+```
+
+### some more recursive functions
+
+**replicate**
