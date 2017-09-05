@@ -118,5 +118,8 @@ maximum'' = foldl1 max
 reverse''' :: [a] -> [a]
 reverse''' xs = foldl (\acc val -> val : acc) [] xs
 
+reverse'''' :: [a] -> [a]
+reverse'''' = foldl (flip(:)) []
+
 
 
