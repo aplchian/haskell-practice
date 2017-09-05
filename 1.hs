@@ -121,5 +121,8 @@ reverse''' xs = foldl (\acc val -> val : acc) [] xs
 reverse'''' :: [a] -> [a]
 reverse'''' = foldl (flip(:)) []
 
+product'' :: (Num a) => [a] -> a 
+product'' = foldl (*) 1
+
 
 
