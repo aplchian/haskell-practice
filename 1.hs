@@ -125,4 +125,7 @@ product'' :: (Num a) => [a] -> a
 product'' = foldl (*) 1
 
 
+last'' :: [a] -> a
+last'' = foldl1 (\_ x -> x)
+
 
